@@ -1,77 +1,103 @@
-/* Global Styles */
+/* Basic reset */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.6;
     padding: 20px;
+    text-align: center;
 }
 
-header h1 {
-    font-size: 2em;
+header {
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Section Styles */
-.section {
-    border: 1px solid black;
-    padding: 20px;
-    background-color: #d3d3d3;
-    position: relative;
-    margin-bottom: 20px;
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-.section-title {
+/* Common styles for all items */
+.item {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 10px;
+    position: relative;
+    padding-top: 60px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    text-align: left;
+    background-color: #f0f0f0;
+}
+
+/* Specific styles for each item */
+.chicken {
+    background-color: #ffebcc;
+}
+
+.beef {
+    background-color: #ffe6e6;
+}
+
+.sushi {
+    background-color: #e6ffe6;
+}
+
+.item .title {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: #f08080; /* Choose a distinct color for each section */
-    padding: 5px 10px;
+    background-color: #ffcccc;
+    color: #000;
+    padding: 10px;
     border: 1px solid black;
-    font-size: 1.25em;
-    color: white;
 }
 
-.section p {
-    margin-top: 40px; /* To ensure text does not overlap the title */
+.item.chicken .title {
+    background-color: #ffa07a;
 }
 
-/* Desktop Styles (992px and above) */
+.item.beef .title {
+    background-color: #ff6f69;
+}
+
+.item.sushi .title {
+    background-color: #98fb98;
+    color: #000;
+}
+
+/* Desktop view */
 @media (min-width: 992px) {
-    .section {
-        float: left;
-        width: 32%;
-        margin-right: 1%;
-    }
-    .section:last-child {
-        margin-right: 0;
+    .item {
+        flex: 1 1 30%;
+        max-width: 30%;
     }
 }
 
-/* Tablet Styles (768px to 991px) */
+/* Tablet view */
 @media (min-width: 768px) and (max-width: 991px) {
-    .section {
-        float: left;
-        width: 48%;
-        margin-right: 2%;
+    .item {
+        flex: 1 1 45%;
+        max-width: 45%;
     }
-    .section:nth-child(2n) {
-        margin-right: 0;
-    }
-    #section3 {
-        width: 100%;
-        margin-right: 0;
+    .item:nth-child(3) {
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 }
 
-/* Mobile Styles (767px and below) */
+/* Mobile view */
 @media (max-width: 767px) {
-    .section {
-        width: 100%;
-        margin-right: 0;
+    .item {
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 }
