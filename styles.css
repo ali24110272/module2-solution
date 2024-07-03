@@ -1,0 +1,77 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Section Styles */
+.section {
+    border: 1px solid black;
+    padding: 20px;
+    background-color: #d3d3d3;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #f08080; /* Choose a distinct color for each section */
+    padding: 5px 10px;
+    border: 1px solid black;
+    font-size: 1.25em;
+    color: white;
+}
+
+.section p {
+    margin-top: 40px; /* To ensure text does not overlap the title */
+}
+
+/* Desktop Styles (992px and above) */
+@media (min-width: 992px) {
+    .section {
+        float: left;
+        width: 32%;
+        margin-right: 1%;
+    }
+    .section:last-child {
+        margin-right: 0;
+    }
+}
+
+/* Tablet Styles (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .section {
+        float: left;
+        width: 48%;
+        margin-right: 2%;
+    }
+    .section:nth-child(2n) {
+        margin-right: 0;
+    }
+    #section3 {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* Mobile Styles (767px and below) */
+@media (max-width: 767px) {
+    .section {
+        width: 100%;
+        margin-right: 0;
+    }
+}
